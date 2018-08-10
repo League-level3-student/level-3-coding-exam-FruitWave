@@ -24,6 +24,18 @@ public class VoteProcessor {
 				mostVoter = string;
 			}
 		}
+
+		mostVoter = mostVoter.toLowerCase();
+		System.out.println("Most voter + " + mostVoter);
+		for (String strings : voters.keySet()) {
+
+			for (String stringCheck : voters.keySet()) {
+				if (!stringCheck.equals(strings) && (voters.get(stringCheck) == voters.get(strings))
+						&& (voters.get(stringCheck) == mostvotes)) {
+					return "TIE";
+				}
+			}
+		}
 		return mostVoter;
 	}
 
